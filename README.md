@@ -1,34 +1,26 @@
-# PiCamera Anypoint Connector
+# Raspberry Pi Camera Anypoint Connector
 
-[Connector description including destination service or application with]
+Connector for the Raspberry Pi Camera
 
 # Mule supported versions
-Examples:
-Mule 3.4.x, 3.5.x
-Mule 3.4.1
+Mule 3.8.x
 
 # [Destination service or application name] supported versions
-Example:
-Oracle E-Business Suite 12.1 and above.
+Raspberry Pi Camera
 
 #Service or application supported modules
-Example:
-Oracle CRM
-Oracle Financials
-or 
-Salesforce API v.24
-Salesforce Metadata API
+Raspberry Pi Camera
 
 
-# Installation 
-For beta connectors you can download the source code and build it with devkit to find it available on your local repository. Then you can add it to Studio
+# Installation
+For beta connectors you can download the source code and build it with the Anypoint DevKit to find it available on your local repository. Then you can add it to Studio
 
-For released connectors you can download them from the update site in Anypoint Studio. 
-Open Anypoint Studio, go to Help → Install New Software and select Anypoint Connectors Update Site where you’ll find all avaliable connectors.
+For released connectors you can download them from the update site in Anypoint Studio.
+Open Anypoint Studio, go to Help → Install New Software and select Anypoint Connectors Update Site where you’ll find all available connectors.
 
 #Usage
-For information about usage our documentation at http://github.com/djuang1/pi-camera.
+For information about usage our documentation at http://github.com/djuang1/pi-camera-connector.
 
 # Reporting Issues
 
-We use GitHub:Issues for tracking issues with this connector. You can report new issues at this link http://github.com/djuang1/pi-camera/issues.
+We use GitHub:Issues for tracking issues with this connector. You can report new issues at this link http://github.com/djuang1/pi-camera-connector/issues.
