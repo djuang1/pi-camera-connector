@@ -1,3 +1,7 @@
-<!-- BEGIN_INCLUDE(pi-camera:greet) -->
-    <pi-camera:greet config-ref="" friend="#[map-payload:friend]" />
-<!-- END_INCLUDE(pi-camera:greet) -->
+<!-- BEGIN_INCLUDE(pi-camera:takePictureToFile) -->
+    <pi-camera:takePictureToFile config-ref="" fileName="#[map-payload:fileName]" path="#[map-payload:path]" encoding="#[map-payload:encoding]" />
+<!-- END_INCLUDE(pi-camera:takePictureToFile) -->
+
+<!-- BEGIN_INCLUDE(pi-camera:takePicture) -->
+    <pi-camera:takePicture config-ref="" encoding="#[map-payload:encoding]" />
+<!-- END_INCLUDE(pi-camera:takePicture) -->
