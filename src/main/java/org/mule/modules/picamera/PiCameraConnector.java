@@ -54,14 +54,22 @@ public class PiCameraConnector {
     	ByteArrayOutputStream os = null; 
     	RPiCamera piCamera;
     	File image = null;
-    	
+		String newFileName = fileName + "_1." + encoding.toString();
+		
 		try {
 			piCamera = new RPiCamera(path);
 			
 			piCamera.setWidth(320).setHeight(240);
 			piCamera.enableBurst();
 			
-			image = piCamera.takeStill(fileName + "." + encoding.toString());
+			// Check to see if file already exists
+			image = new File(path + "/" + newFileName);			
+			for (int i = 1; image.exists(); i++) {
+				newFileName = String.format(fileName + "_%d." + encoding.toString(), i);
+				image = new File(path + "/" + newFileName);				
+			}
+						
+			image = piCamera.takeStill(newFileName);
 			
 		} catch (FailedToRunRaspistillException e) {
 			
@@ -70,9 +78,13 @@ public class PiCameraConnector {
 			
 			try {
 				// read this file into InputStream
-				inputStream = getClass().getResourceAsStream("/raspberry_pi.png");	
-				image = new File(path + "/" + fileName + ".png");
+				inputStream = getClass().getResourceAsStream("/IMG_PI_1.png");	
+				image = new File(path + "/" + fileName + "_1.png");
 						
+				for (int i = 1; image.exists(); i++) {
+				    image = new File(path + "/" + String.format(fileName + "_%d.png", i));
+				}
+				
 				// write the inputStream to a FileOutputStream
 				outputStream =
 		                    new FileOutputStream(image);
@@ -151,7 +163,7 @@ public class PiCameraConnector {
 			
 			BufferedImage defaultImage;
 			try {
-				defaultImage = ImageIO.read(getClass().getResourceAsStream("/raspberry_pi.png"));
+				defaultImage = ImageIO.read(getClass().getResourceAsStream("/IMG_PI_1.png"));
 				ImageIO.write(defaultImage, "png", os);
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
